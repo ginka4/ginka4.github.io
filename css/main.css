@@ -1089,6 +1089,7 @@ pre code {
   color: var(--brand-color);
   display: inline-block;
   padding: 0;
+  color: #ffb6c1 !important;
 }
 .brand:hover {
   color: var(--brand-hover-color);
@@ -1104,6 +1105,7 @@ pre code {
   color: #ddd;
   font-size: 0.8125em;
   margin: 10px 10px 0;
+  color: #ffb6c1 !important;
 }
 .use-motion .site-title,
 .use-motion .site-subtitle,
@@ -1236,7 +1238,7 @@ pre code {
     vertical-align: middle;
   }
   .links-of-author a::before {
-    background: #a396ff;
+    background: #e3ff8a;
     display: inline-block;
     margin-right: 3px;
     transform: translateY(-2px);
