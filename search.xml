@@ -1,12 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title></title>
-    <url>/2024/11/15/bin/</url>
-    <content><![CDATA[<h1 id="bin"><a href="#bin" class="headerlink" title="bin"></a>bin</h1><h2 id="狗屎"><a href="#狗屎" class="headerlink" title="狗屎"></a>狗屎</h2><h3 id="一坨"><a href="#一坨" class="headerlink" title="一坨"></a>一坨</h3><p>确信！！！</p>
-]]></content>
-  </entry>
-  <entry>
     <title>ginka</title>
     <url>/2024/11/16/ginka/</url>
     <content><![CDATA[<p>1111</p>
@@ -34,6 +28,12 @@
 <h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
 
 <p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+]]></content>
+  </entry>
+  <entry>
+    <title></title>
+    <url>/2024/11/15/bin/</url>
+    <content><![CDATA[<h1 id="bin"><a href="#bin" class="headerlink" title="bin"></a>bin</h1><h2 id="狗屎"><a href="#狗屎" class="headerlink" title="狗屎"></a>狗屎</h2><h3 id="一坨"><a href="#一坨" class="headerlink" title="一坨"></a>一坨</h3><p>确信！！！</p>
 ]]></content>
   </entry>
 </search>
