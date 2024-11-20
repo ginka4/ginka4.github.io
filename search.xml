@@ -1,16 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>ginka</title>
-    <url>/2024/11/16/ginka/</url>
-    <content><![CDATA[<p>1111</p>
+    <title></title>
+    <url>/2024/11/15/bin/</url>
+    <content><![CDATA[<h1 id="bin"><a href="#bin" class="headerlink" title="bin"></a>bin</h1><h2 id="狗屎"><a href="#狗屎" class="headerlink" title="狗屎"></a>狗屎</h2><h3 id="一坨"><a href="#一坨" class="headerlink" title="一坨"></a>一坨</h3><p>确信！！！</p>
 ]]></content>
-      <categories>
-        <category>test</category>
-      </categories>
-      <tags>
-        <tag>学习，小白</tag>
-      </tags>
   </entry>
   <entry>
     <title>Hello World</title>
@@ -31,9 +25,15 @@
 ]]></content>
   </entry>
   <entry>
-    <title></title>
-    <url>/2024/11/15/bin/</url>
-    <content><![CDATA[<h1 id="bin"><a href="#bin" class="headerlink" title="bin"></a>bin</h1><h2 id="狗屎"><a href="#狗屎" class="headerlink" title="狗屎"></a>狗屎</h2><h3 id="一坨"><a href="#一坨" class="headerlink" title="一坨"></a>一坨</h3><p>确信！！！</p>
+    <title>ginka</title>
+    <url>/2024/11/16/ginka/</url>
+    <content><![CDATA[<p>1111</p>
 ]]></content>
+      <categories>
+        <category>test</category>
+      </categories>
+      <tags>
+        <tag>学习，小白</tag>
+      </tags>
   </entry>
 </search>
