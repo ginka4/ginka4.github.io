@@ -1238,7 +1238,7 @@ pre code {
     vertical-align: middle;
   }
   .links-of-author a::before {
-    background: #d105ff;
+    background: #abff30;
     display: inline-block;
     margin-right: 3px;
     transform: translateY(-2px);
@@ -2860,4 +2860,10 @@ body {
 }
 .site-brand-container {
   background: rgba(255,255,255,0);
+}
+/* 禁用标签云动画 */
+.tag-cloud-title ~ .tag-cloud {
+  animation: none !important;
+  transform: none !important;
+  transition: none !important;
 }
