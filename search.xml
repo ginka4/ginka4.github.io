@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>Linux文件的操作</title>
+    <url>/2025/12/30/Linux_day1/</url>
+    <content><![CDATA[<h6 id="文件的创建"><a href="#文件的创建" class="headerlink" title="文件的创建"></a>文件的创建</h6><p>1.cat&gt;file1</p>
+<p>直接用键盘写文件内容，结束输入用ctrl+d</p>
+<p>重定向符号 &gt; ，管道pipe</p>
+<p>2.echo hello&gt;test2</p>
+<p>默认情况下，会有一个\n写入文件</p>
+<p>echo -n hello&gt;test2</p>
+<p>当echo使用了-n选项之后，可以去掉\n换行符</p>
+<p>3.touch file3</p>
+<p>4.vim file4</p>
+<h6 id="硬链接"><a href="#硬链接" class="headerlink" title="硬链接"></a>硬链接</h6><p>1.ln命令</p>
+<p>初始情况下，file1的初始链接数为1</p>
+<p>创建file1的硬链接file2，之后发现硬链接数变成了2</p>
+<p>file1于file2是同一个文件</p>
+<h6 id="软链接"><a href="#软链接" class="headerlink" title="软链接"></a>软链接</h6><p>1.ln -s test1 stest1</p>
+<p>作用类似于Windows中的快捷方式</p>
+<h6 id="文件的权限修改"><a href="#文件的权限修改" class="headerlink" title="文件的权限修改"></a>文件的权限修改</h6><p>1.文字设定法</p>
+<p>chmod u+x,g+x ycm.py</p>
+<p>2.数字设定法</p>
+<p>chmod 640 ycm.py</p>
+<h6 id="文件的拷贝-复制"><a href="#文件的拷贝-复制" class="headerlink" title="文件的拷贝(复制)"></a>文件的拷贝(复制)</h6><p>1.cp命令</p>
+<p>cp ycm.py .&#x2F;test&#x2F;dir1&#x2F;</p>
+<p>复制文件的同时 ，修改文件的名字</p>
+<p>cp ycm.py .&#x2F;test&#x2F;dir1&#x2F;file3.py</p>
+<p>2.拷贝文件夹(目录) 加-r,递归执行</p>
+<p>在同一个父目录复制文件夹，同时还修改了文件夹的名字</p>
+<p>cp -r test test2</p>
+<p>在不同目录下</p>
+<p>cp -r test2 ~&#x2F;</p>
+<p>3.跨主机传输文件</p>
+<p>scp 源文件的位置 目的主机的位置</p>
+<p>​               user@host:&#x2F;path</p>
+<p>然后输入目的主机的相应用户的密码</p>
+<p>4.移动文件</p>
+<p>mv(move) 源文件 目的地</p>
+<p>mv ycm.py test&#x2F;dir2&#x2F;</p>
+<p>5.重命名功能</p>
+<p>对同一目录下的文件进行重命名</p>
+<p>mv test2 test3</p>
+<h6 id="文件的删除"><a href="#文件的删除" class="headerlink" title="文件的删除"></a>文件的删除</h6><p>1.rm test4</p>
+<p>删除单独的文件</p>
+<p>2.rm ~&#x2F;test2&#x2F;test3</p>
+<p>删除不同的目录下的文件</p>
+<p>3.目录的删除</p>
+<p>rm test3 -r      -r为递归删除</p>
+<p>rm -r ~&#x2F;test2</p>
+<h6 id="文件的查找"><a href="#文件的查找" class="headerlink" title="文件的查找"></a>文件的查找</h6><p>1.find ~&#x2F; -name stdio.h</p>
+<p>find 查找位置 按文件名 文件名</p>
+<p>在根目录下查找时，前面加sudo提升权限</p>
+<p>2.grep 要过滤的关键字 指定要查找的位置 -rn</p>
+<p>grep string .&#x2F; -rn</p>
+<p>-r表示递归查找 -n表示显示关键字在文件中的行号</p>
+<h6 id="打包和压缩"><a href="#打包和压缩" class="headerlink" title="打包和压缩"></a>打包和压缩</h6><p>1.tar命令</p>
+<p>只打包，没有压缩的效果</p>
+<p>tar -cvf day02.tar day02&#x2F;</p>
+<p>压缩的效果</p>
+<p>tar -zcvf day02.tar.gz day02</p>
+<h6 id="拆包和解压缩"><a href="#拆包和解压缩" class="headerlink" title="拆包和解压缩"></a>拆包和解压缩</h6><p>1.只拆包，没有解压缩</p>
+<p>tar -xvf day02.tar</p>
+<p>解压缩</p>
+<p>tar -zxvf day02.tar.gz</p>
+<p>2.解压Windows生成的*.zip的压缩文件</p>
+<p>unzip Linux.zip</p>
+<h6 id="查看磁盘空间"><a href="#查看磁盘空间" class="headerlink" title="查看磁盘空间"></a>查看磁盘空间</h6><p>1.df -h 查看磁盘</p>
+<p>2.free -h 查看内存</p>
+<h6 id="对一个命令设置别名"><a href="#对一个命令设置别名" class="headerlink" title="对一个命令设置别名"></a>对一个命令设置别名</h6><p>第一步，找到用户家目录下的.bashrc文件</p>
+<p>第二步，在该文件的末尾加上新的一行，使用alias命令起别名</p>
+<p>第三步，重新加载该文件</p>
+<p>$ source ~&#x2F;.bashrc</p>
+<p>第四步，使用新命令</p>
+<h6 id="获取内核以及操作系统的信息"><a href="#获取内核以及操作系统的信息" class="headerlink" title="获取内核以及操作系统的信息"></a>获取内核以及操作系统的信息</h6><p>1.uname -a</p>
+<p>2.lsb_release -a</p>
+<p>3.cat &#x2F;etc&#x2F;issue </p>
+]]></content>
+      <categories>
+        <category>从零开始的Linux生活</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
+      </tags>
+  </entry>
+</search>
