@@ -84,9 +84,22 @@
       </tags>
   </entry>
   <entry>
-    <title>test</title>
-    <url>/2026/01/04/test/</url>
-    <content><![CDATA[<p><img src="/images/ima.png"></p>
+    <title>vim的使用</title>
+    <url>/2026/01/04/the%20_use_of_vim/</url>
+    <content><![CDATA[<h6 id="第一讲总结"><a href="#第一讲总结" class="headerlink" title="第一讲总结"></a>第一讲总结</h6><p>![image-20260104164507747-1767519615563-2](..&#x2F;images&#x2F;the _use_of_vim&#x2F;image-20260104164507747-1767519615563-2.png)</p>
+<h6 id="第二讲总结"><a href="#第二讲总结" class="headerlink" title="第二讲总结"></a>第二讲总结</h6><p>![image-20260104164716929-1767519646133-5](..&#x2F;images&#x2F;the _use_of_vim&#x2F;image-20260104164716929-1767519646133-5.png)</p>
+<h6 id="第三讲总结"><a href="#第三讲总结" class="headerlink" title="第三讲总结"></a>第三讲总结</h6><p>![image-20260104164741092-1767519667650-8](..&#x2F;images&#x2F;the _use_of_vim&#x2F;image-20260104164741092-1767519667650-8.png)</p>
+<h6 id="第四讲总结"><a href="#第四讲总结" class="headerlink" title="第四讲总结"></a>第四讲总结</h6><p>![image-20260104164808576-1767519676759-11](..&#x2F;images&#x2F;the _use_of_vim&#x2F;image-20260104164808576-1767519676759-11.png)</p>
+<h6 id="第五讲总结"><a href="#第五讲总结" class="headerlink" title="第五讲总结"></a>第五讲总结</h6><p>![image-20260104164833643-1767519696256-14](..&#x2F;images&#x2F;the _use_of_vim&#x2F;image-20260104164833643-1767519696256-14.png)</p>
+<h6 id="第六讲总结"><a href="#第六讲总结" class="headerlink" title="第六讲总结"></a>第六讲总结</h6><p>![image-20260104164851791-1767519703908-17-1767520133008-22](..&#x2F;images&#x2F;the _use_of_vim&#x2F;image-20260104164851791-1767519703908-17-1767520133008-22.png)</p>
+<h6 id="第七讲总结"><a href="#第七讲总结" class="headerlink" title="第七讲总结"></a>第七讲总结</h6><p>![image-20260104170303025-1767519712609-20](..&#x2F;images&#x2F;the _use_of_vim&#x2F;image-20260104170303025-1767519712609-20.png)</p>
 ]]></content>
+      <categories>
+        <category>从零开始的Linux生活</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
+        <tag>vim</tag>
+      </tags>
   </entry>
 </search>
