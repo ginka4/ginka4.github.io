@@ -3,7 +3,8 @@
   <entry>
     <title>Linux文件的操作</title>
     <url>/2025/12/30/Linux_day1/</url>
-    <content><![CDATA[<h6 id="文件的创建"><a href="#文件的创建" class="headerlink" title="文件的创建"></a>文件的创建</h6><p>1.cat&gt;file1</p>
+    <content><![CDATA[<p>   本文章主要讲解了入门Linux系统的基本文件操作方法，供读者入门参考。</p>
+<h6 id="文件的创建"><a href="#文件的创建" class="headerlink" title="文件的创建"></a>文件的创建</h6><p>1.cat&gt;file1</p>
 <p>直接用键盘写文件内容，结束输入用ctrl+d</p>
 <p>重定向符号 &gt; ，管道pipe</p>
 <p>2.echo hello&gt;test2</p>
@@ -84,15 +85,48 @@
       </tags>
   </entry>
   <entry>
+    <title>C++命名空间的使用</title>
+    <url>/2026/01/06/c++day1/</url>
+    <content><![CDATA[<p>   在C语言发展的过程中，会碰到多个公司之间进行合作开发。当两个不同公司代码合在一起时，会出现命名冲突的情况。在C++中，引入了命名空间。</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">namespace</span> name&#123;</span><br><span class="line">    <span class="type">int</span> gnum;</span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">func</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h6 id="命名空间的使用方式"><a href="#命名空间的使用方式" class="headerlink" title="命名空间的使用方式"></a>命名空间的使用方式</h6><p>1.作用域限定符 ::</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line">cout &lt;&lt; wd::gnum &lt;&lt; endl;</span><br><span class="line">wd::<span class="built_in">func</span>();</span><br></pre></td></tr></table></figure>
+
+<p>2.using编译指令</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br></pre></td></tr></table></figure>
+
+<p>存在风险：当程序员不知道std空间中有哪些实体的情况下，会误用空间中的实体导致出现bug。不推荐使用这样的方式</p>
+<p>3.using声明机制(推荐使用)</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">using</span> std::cout;</span><br><span class="line"><span class="keyword">using</span> std::endl;</span><br></pre></td></tr></table></figure>
+
+<p> 解决了方法二的缺点</p>
+<h6 id="命名空间的嵌套使用"><a href="#命名空间的嵌套使用" class="headerlink" title="命名空间的嵌套使用"></a>命名空间的嵌套使用</h6>]]></content>
+      <categories>
+        <category>从零开始的C++生活</category>
+      </categories>
+      <tags>
+        <tag>C++</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>vim的使用</title>
     <url>/2026/01/04/the_use_of_vim/</url>
-    <content><![CDATA[<h6 id="第一讲总结"><a href="#第一讲总结" class="headerlink" title="第一讲总结"></a>第一讲总结</h6><p><img src="/../images/the_use_of_vim/1.png" alt="1"></p>
+    <content><![CDATA[<p>   本文章主要讲述了vim的基本使用方法，来源于vimtutor，仅供读者入门使用。</p>
+<h6 id="第一讲总结"><a href="#第一讲总结" class="headerlink" title="第一讲总结"></a>第一讲总结</h6><p><img src="/../images/the_use_of_vim/1.png" alt="1"></p>
 <h6 id="第二讲总结"><a href="#第二讲总结" class="headerlink" title="第二讲总结"></a>第二讲总结</h6><p><img src="/../images/the_use_of_vim/image-20260104164716929-1767519646133-5.png" alt="image-20260104164716929-1767519646133-5"></p>
 <h6 id="第三讲总结"><a href="#第三讲总结" class="headerlink" title="第三讲总结"></a>第三讲总结</h6><p><img src="/../images/the_use_of_vim/image-20260104164741092-1767519667650-8.png" alt="image-20260104164741092-1767519667650-8"></p>
 <h6 id="第四讲总结"><a href="#第四讲总结" class="headerlink" title="第四讲总结"></a>第四讲总结</h6><p><img src="/../images/the_use_of_vim/image-20260104164808576-1767519676759-11.png" alt="image-20260104164808576-1767519676759-11"></p>
 <h6 id="第五讲总结"><a href="#第五讲总结" class="headerlink" title="第五讲总结"></a>第五讲总结</h6><p><img src="/../images/the_use_of_vim/image-20260104164833643-1767519696256-14.png" alt="image-20260104164833643-1767519696256-14"></p>
 <h6 id="第六讲总结"><a href="#第六讲总结" class="headerlink" title="第六讲总结"></a>第六讲总结</h6><p><img src="/../images/the_use_of_vim/image-20260104164851791-1767519703908-17-1767520133008-22.png" alt="image-20260104164851791-1767519703908-17-1767520133008-22"></p>
 <h6 id="第七讲总结"><a href="#第七讲总结" class="headerlink" title="第七讲总结"></a>第七讲总结</h6><p><img src="/../images/the_use_of_vim/image-20260104170303025-1767519712609-20.png" alt="image-20260104170303025-1767519712609-20"></p>
+<h6 id="在vim中以多标签方式打开文件"><a href="#在vim中以多标签方式打开文件" class="headerlink" title="在vim中以多标签方式打开文件"></a>在vim中以多标签方式打开文件</h6><p>1.先打开hello.c文件</p>
+<p>2.用命令行模式</p>
+<p>3.在多标签中进行切换</p>
+<p>   ctrl+n 下一个标签</p>
+<p>   ctrl+p 下一个标签</p>
+<p>4.关闭某一个标签，使用命令行模式</p>
+<p>   :bd</p>
 ]]></content>
       <categories>
         <category>从零开始的Linux生活</category>
