@@ -19,22 +19,27 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.21.1","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
-    <meta property="og:type" content="website">
-<meta property="og:title" content="Ginka4">
-<meta property="og:url" content="http://example.com/tags/vim/index.html">
+    <meta name="description" content="const关键字具有只读属性，无法进行修改。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="C++const关键字">
+<meta property="og:url" content="http://example.com/2026/01/07/C++const/index.html">
 <meta property="og:site_name" content="Ginka4">
+<meta property="og:description" content="const关键字具有只读属性，无法进行修改。">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2026-01-07T07:41:29.242Z">
+<meta property="article:modified_time" content="2026-01-07T14:45:12.346Z">
 <meta property="article:author" content="Ginka4">
+<meta property="article:tag" content="C++">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="http://example.com/tags/vim/">
+<link rel="canonical" href="http://example.com/2026/01/07/C++const/">
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":false,"lang":"zh-CN","comments":"","permalink":"","path":"tags/vim/index.html","title":""}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://example.com/2026/01/07/C++const/","path":"2026/01/07/C++const/","title":"C++const关键字"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>标签: vim | Ginka4</title>
+<title>C++const关键字 | Ginka4</title>
   
 
 
@@ -121,7 +126,7 @@
   
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-overview-active">
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           文章目录
@@ -134,6 +139,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%8F%E5%AE%9A%E4%B9%89%E4%B8%8Econst%E5%B8%B8%E9%87%8F%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="nav-number">1.</span> <span class="nav-text">宏定义与const常量的区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#const%E5%85%B3%E9%94%AE%E5%AD%97%E4%BF%AE%E9%A5%B0%E6%8C%87%E9%92%88"><span class="nav-number">2.</span> <span class="nav-text">const关键字修饰指针</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A6%82%E5%BF%B5%E5%AF%B9%E6%AF%94"><span class="nav-number">3.</span> <span class="nav-text">概念对比</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%B8%B8%E9%87%8F%E6%8C%87%E9%92%88-vs-%E6%8C%87%E9%92%88%E5%B8%B8%E9%87%8F"><span class="nav-number">3.1.</span> <span class="nav-text">常量指针 vs 指针常量</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%95%B0%E7%BB%84%E6%8C%87%E9%92%88-vs-%E6%8C%87%E9%92%88%E6%95%B0%E7%BB%84"><span class="nav-number">3.2.</span> <span class="nav-text">数组指针 vs 指针数组</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%87%BD%E6%95%B0%E6%8C%87%E9%92%88-vs-%E6%8C%87%E9%92%88%E5%87%BD%E6%95%B0"><span class="nav-number">3.3.</span> <span class="nav-text">函数指针 vs 指针函数</span></a></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -183,50 +189,151 @@
 
     </div>
 
-    <div class="main-inner tag posts-collapse">
+    <div class="main-inner post posts-expand">
 
 
   
+
+
+<div class="post-block">
   
   
-  <div class="post-block">
-    <div class="post-content">
-      <div class="collection-title">
-        <h1 class="collection-header">vim
-          <small>标签</small>
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2026/01/07/C++const/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/1731685665806.jpg">
+      <meta itemprop="name" content="Ginka4">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Ginka4">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="C++const关键字 | Ginka4">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          C++const关键字
         </h1>
-      </div>
 
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
       
-    <div class="collection-year">
-      <span class="collection-header">2026</span>
+
+      <time title="创建时间：2026-01-07 15:41:29 / 修改时间：22:45:12" itemprop="dateCreated datePublished" datetime="2026-01-07T15:41:29+08:00">2026-01-07</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84C-%E7%94%9F%E6%B4%BB/" itemprop="url" rel="index"><span itemprop="name">从零开始的C++生活</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读次数：</span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>654</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>1 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><p>　　const关键字具有只读属性，无法进行修改。</p>
+<h3 id="宏定义与const常量的区别"><a href="#宏定义与const常量的区别" class="headerlink" title="宏定义与const常量的区别"></a>宏定义与const常量的区别</h3><p>Q：宏定义与const常量的区别？</p>
+<p>A：发生的时机不一样，宏定义发生在预处理时，只是进行简单的文本替换。const常量发生的时机时编译时。</p>
+<p>宏定义没有类型检查机制，出错时，会将发生错误的时机延迟到运行时，const常量是编译时，有类型检查机制，在编译时就可以发现问题。</p>
+<p>这提醒我们，如果使用宏定义不当，发生错误的概率会更大一些，因此建议多用const关键字。</p>
+<h3 id="const关键字修饰指针"><a href="#const关键字修饰指针" class="headerlink" title="const关键字修饰指针"></a>const关键字修饰指针</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">const</span> <span class="type">int</span> * p2 = &amp;num；<span class="comment">//p2不能修改所指空间的内容，但依然可以改变p2的指向</span></span><br><span class="line"><span class="type">int</span> <span class="type">const</span> * p1 = &amp;num;<span class="comment">//p1不能修改所指空间的内容，但依然可以改变p1的指向</span></span><br><span class="line"><span class="type">int</span> * <span class="type">const</span> p3 = &amp;num;<span class="comment">//p3可以修改所指空间的内容，但不能改变p3的指向</span></span><br><span class="line"><span class="type">const</span> <span class="type">int</span> * <span class="type">const</span> p1 = &amp;num;<span class="comment">//const的双重限定，两者都不能进行修改</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="概念对比"><a href="#概念对比" class="headerlink" title="概念对比"></a>概念对比</h3><h4 id="常量指针-vs-指针常量"><a href="#常量指针-vs-指针常量" class="headerlink" title="常量指针 vs 指针常量"></a>常量指针 vs 指针常量</h4><p>常量指针：首先是一个指针，指向的是常量，意味着不能修改指针所指的内容</p>
+<p>指针常量：首先是一个常量，指针本身不能改变指向</p>
+<h4 id="数组指针-vs-指针数组"><a href="#数组指针-vs-指针数组" class="headerlink" title="数组指针 vs 指针数组"></a>数组指针 vs 指针数组</h4><p>数组指针：首先是一个指针，指向的是一个数组</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> arr[<span class="number">5</span>];</span><br><span class="line"><span class="built_in">int</span> (*p)[<span class="number">5</span>];</span><br></pre></td></tr></table></figure>
+
+<p>指针数组：首先是一个数组，数组中存放的是指针</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> *arr2[<span class="number">5</span>];</span><br></pre></td></tr></table></figure>
+
+<h4 id="函数指针-vs-指针函数"><a href="#函数指针-vs-指针函数" class="headerlink" title="函数指针 vs 指针函数"></a>函数指针 vs 指针函数</h4><p>函数指针：首先是一个指针，指向的是一个函数</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">int</span> (*p)();</span><br></pre></td></tr></table></figure>
+
+<p>指针函数：首先是一个函数，函数的返回值是指针</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">int</span> *<span class="title">f</span><span class="params">()</span></span>;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+
     </div>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2026-01-04T21:56:44+08:00"
-              content="2026-01-04">
-          01-04
-        </time>
-      </div>
+    
+    
+    
 
-      <div class="post-title">
-          <a class="post-title-link" href="/2026/01/04/the_use_of_vim/" itemprop="url">
-            <span itemprop="name">vim的使用</span>
-          </a>
-      </div>
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/C/" rel="tag"># C++</a>
+          </div>
 
-      
-    </header>
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2026/01/06/C++namespace/" rel="prev" title="C++命名空间的使用">
+                  <i class="fa fa-angle-left"></i> C++命名空间的使用
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2026/01/08/C++new_delete/" rel="next" title="C++new/delete">
+                  C++new/delete <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
   </article>
+</div>
 
-    </div>
-  </div>
-  
-  
-  
+
+
+
+
 
 </div>
   </main>

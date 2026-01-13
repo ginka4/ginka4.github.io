@@ -19,27 +19,29 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.21.1","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="在C语言发展的过程中，会碰到多个公司之间进行合作开发。当两个不同公司代码合在一起时，会出现命名冲突的情况。在C++中，引入了命名空间。">
+    <meta name="description" content="C++强制(类型)转换、函数重载与默认参数。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="C++命名空间的使用">
-<meta property="og:url" content="http://example.com/2026/01/06/c++day1/index.html">
+<meta property="og:title" content="C++强制类型转换&amp;函数重载与默认参数">
+<meta property="og:url" content="http://example.com/2026/01/13/C++change/index.html">
 <meta property="og:site_name" content="Ginka4">
-<meta property="og:description" content="在C语言发展的过程中，会碰到多个公司之间进行合作开发。当两个不同公司代码合在一起时，会出现命名冲突的情况。在C++中，引入了命名空间。">
+<meta property="og:description" content="C++强制(类型)转换、函数重载与默认参数。">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2026-01-06T07:59:52.917Z">
-<meta property="article:modified_time" content="2026-01-06T14:32:25.908Z">
+<meta property="og:image" content="http://example.com/images/C++change/image-20260113210040415.png">
+<meta property="article:published_time" content="2026-01-13T12:19:43.170Z">
+<meta property="article:modified_time" content="2026-01-13T13:02:03.585Z">
 <meta property="article:author" content="Ginka4">
 <meta property="article:tag" content="C++">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/images/C++change/image-20260113210040415.png">
 
 
-<link rel="canonical" href="http://example.com/2026/01/06/c++day1/">
+<link rel="canonical" href="http://example.com/2026/01/13/C++change/">
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://example.com/2026/01/06/c++day1/","path":"2026/01/06/c++day1/","title":"C++命名空间的使用"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://example.com/2026/01/13/C++change/","path":"2026/01/13/C++change/","title":"C++强制类型转换&函数重载与默认参数"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>C++命名空间的使用 | Ginka4</title>
+<title>C++强制类型转换&函数重载与默认参数 | Ginka4</title>
   
 
 
@@ -126,7 +128,7 @@
   
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+    <div class="sidebar-inner sidebar-overview-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           文章目录
@@ -139,7 +141,6 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%91%BD%E5%90%8D%E7%A9%BA%E9%97%B4%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E5%BC%8F"><span class="nav-number">1.</span> <span class="nav-text">命名空间的使用方式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%91%BD%E5%90%8D%E7%A9%BA%E9%97%B4%E7%9A%84%E5%B5%8C%E5%A5%97%E4%BD%BF%E7%94%A8"><span class="nav-number">2.</span> <span class="nav-text">命名空间的嵌套使用</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -154,7 +155,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">3</span>
+          <span class="site-state-item-count">7</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -200,7 +201,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2026/01/06/c++day1/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2026/01/13/C++change/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/1731685665806.jpg">
@@ -213,12 +214,12 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="C++命名空间的使用 | Ginka4">
+      <meta itemprop="name" content="C++强制类型转换&函数重载与默认参数 | Ginka4">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          C++命名空间的使用
+          C++强制类型转换&函数重载与默认参数
         </h1>
 
         <div class="post-meta-container">
@@ -230,7 +231,7 @@
       <span class="post-meta-item-text">发表于</span>
       
 
-      <time title="创建时间：2026-01-06 15:59:52 / 修改时间：22:32:25" itemprop="dateCreated datePublished" datetime="2026-01-06T15:59:52+08:00">2026-01-06</time>
+      <time title="创建时间：2026-01-13 20:19:43 / 修改时间：21:02:03" itemprop="dateCreated datePublished" datetime="2026-01-13T20:19:43+08:00">2026-01-13</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -256,7 +257,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>332</span>
+      <span>22</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
@@ -273,21 +274,9 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><p>　　在C语言发展的过程中，会碰到多个公司之间进行合作开发。当两个不同公司代码合在一起时，会出现命名冲突的情况。在C++中，引入了命名空间。</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">namespace</span> name&#123;</span><br><span class="line">    <span class="type">int</span> gnum;</span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">func</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+    <div class="post-body" itemprop="articleBody"><p>　　C++强制(类型)转换、函数重载与默认参数。</p>
+<p><img src="/../images/C++change/image-20260113210040415.png" alt="image-20260113210040415"></p>
 
-<h3 id="命名空间的使用方式"><a href="#命名空间的使用方式" class="headerlink" title="命名空间的使用方式"></a>命名空间的使用方式</h3><p>1.作用域限定符 ::</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cout &lt;&lt; wd::gnum &lt;&lt; endl;</span><br><span class="line">wd::<span class="built_in">func</span>();</span><br></pre></td></tr></table></figure>
-
-<p>2.using编译指令</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br></pre></td></tr></table></figure>
-
-<p>存在风险：当程序员不知道std空间中有哪些实体的情况下，会误用空间中的实体导致出现bug。不推荐使用这样的方式</p>
-<p>3.using声明机制(推荐使用)</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">using</span> std::cout;</span><br><span class="line"><span class="keyword">using</span> std::endl;</span><br></pre></td></tr></table></figure>
-
-<p> 解决了方法二的缺点</p>
-<h3 id="命名空间的嵌套使用"><a href="#命名空间的嵌套使用" class="headerlink" title="命名空间的嵌套使用"></a>命名空间的嵌套使用</h3>
     </div>
 
     
@@ -303,8 +292,8 @@
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/2026/01/04/the_use_of_vim/" rel="prev" title="vim的使用">
-                  <i class="fa fa-angle-left"></i> vim的使用
+                <a href="/2026/01/09/C++reference/" rel="prev" title="C++引用">
+                  <i class="fa fa-angle-left"></i> C++引用
                 </a>
             </div>
             <div class="post-nav-item">
@@ -338,13 +327,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="站点总字数">2k</span>
+    <span title="站点总字数">3k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">3 分钟</span>
+    <span title="站点阅读时长">6 分钟</span>
   </span>
 </div>
 <div class="busuanzi-count">

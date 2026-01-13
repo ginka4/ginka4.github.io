@@ -1,8 +1,147 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>C++命名空间的使用</title>
+    <url>/2026/01/06/C++namespace/</url>
+    <content><![CDATA[<p>　　在C语言发展的过程中，会碰到多个公司之间进行合作开发。当两个不同公司代码合在一起时，会出现命名冲突的情况。在C++中，引入了命名空间。</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">namespace</span> name&#123;</span><br><span class="line">    <span class="type">int</span> gnum;</span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">func</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="命名空间的基本使用方式"><a href="#命名空间的基本使用方式" class="headerlink" title="命名空间的基本使用方式"></a>命名空间的基本使用方式</h3><p>1.作用域限定符 ::</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line">cout &lt;&lt; wd::gnum &lt;&lt; endl;</span><br><span class="line">wd::<span class="built_in">func</span>();</span><br></pre></td></tr></table></figure>
+
+<p>2.using编译指令</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br></pre></td></tr></table></figure>
+
+<p>存在风险：当程序员不知道std空间中有哪些实体的情况下，会误用空间中的实体导致出现bug。不推荐使用这样的方式</p>
+<p>3.using声明机制(推荐使用)</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">using</span> std::cout;</span><br><span class="line"><span class="keyword">using</span> std::endl;</span><br></pre></td></tr></table></figure>
+
+<p> 解决了方法二的缺点</p>
+<h3 id="命名空间的嵌套使用"><a href="#命名空间的嵌套使用" class="headerlink" title="命名空间的嵌套使用"></a>命名空间的嵌套使用</h3><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line">cout &lt;&lt; wd::cpp::<span class="built_in">func</span>() &lt;&lt; endl;</span><br></pre></td></tr></table></figure>
+
+<p>　　命名空间也可以匿名使用，如下：</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="built_in">print</span>();  <span class="comment">//等同于 ::print();</span></span><br></pre></td></tr></table></figure>
+
+<p>　　匿名的命名空间也可以添加新的实体，如下：</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">namespace</span> &#123;</span><br><span class="line">	<span class="type">int</span> gnum=<span class="number">4</span>;</span><br><span class="line">	<span class="function"><span class="type">void</span> <span class="title">func</span><span class="params">()</span></span>&#123;</span><br><span class="line">		<span class="built_in">print</span>();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>　　全局位置与匿名命名空间中的实体出现同名时，匿名命名空间中的同名实体会被隐藏。此外，匿名命名空间中的实体只能在本模块内部使用，与静态变量有相同的作用。</p>
+<p>　　命名空间相当于是一个黑洞，可以往其中任意填充实体(实体名字不能相同)，不管是在同一个模块内部还是在不同的模块中。</p>
+<h3 id="静态变量与全局变量"><a href="#静态变量与全局变量" class="headerlink" title="静态变量与全局变量"></a>静态变量与全局变量</h3><p>Q：静态变量与全局变量的区别是什么？</p>
+<p>A：静态变量只能在本模块内部使用，不能跨模块使用。全局变量可以跨模块使用。</p>
+<p>Q：怎么定义一个模块</p>
+<p>A：一个模块就指的是一个*.c&#x2F;<em>.cpp&#x2F;.cc文件，编译时是将一个</em>.c&#x2F;*.cpp&#x2F;.cc文件作为一个编译单元的。</p>
+]]></content>
+      <categories>
+        <category>从零开始的C++生活</category>
+      </categories>
+      <tags>
+        <tag>C++</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>C++引用</title>
+    <url>/2026/01/09/C++reference/</url>
+    <content><![CDATA[<p>　　C++提出引用，是为了降低使用指针带来的风险，引用本质上是一个变量的别名，引用一经初始化(绑定)以后，就不会再改变指向。 </p>
+<p><img src="/../images/C++reference/image-20260113194239450.png" alt="image-20260113194348753"></p>
+]]></content>
+      <categories>
+        <category>从零开始的C++生活</category>
+      </categories>
+      <tags>
+        <tag>C++</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>C++const关键字</title>
+    <url>/2026/01/07/C++const/</url>
+    <content><![CDATA[<p>　　const关键字具有只读属性，无法进行修改。</p>
+<h3 id="宏定义与const常量的区别"><a href="#宏定义与const常量的区别" class="headerlink" title="宏定义与const常量的区别"></a>宏定义与const常量的区别</h3><p>Q：宏定义与const常量的区别？</p>
+<p>A：发生的时机不一样，宏定义发生在预处理时，只是进行简单的文本替换。const常量发生的时机时编译时。</p>
+<p>宏定义没有类型检查机制，出错时，会将发生错误的时机延迟到运行时，const常量是编译时，有类型检查机制，在编译时就可以发现问题。</p>
+<p>这提醒我们，如果使用宏定义不当，发生错误的概率会更大一些，因此建议多用const关键字。</p>
+<h3 id="const关键字修饰指针"><a href="#const关键字修饰指针" class="headerlink" title="const关键字修饰指针"></a>const关键字修饰指针</h3><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="type">const</span> <span class="type">int</span> * p2 = &amp;num；<span class="comment">//p2不能修改所指空间的内容，但依然可以改变p2的指向</span></span><br><span class="line"><span class="type">int</span> <span class="type">const</span> * p1 = &amp;num;<span class="comment">//p1不能修改所指空间的内容，但依然可以改变p1的指向</span></span><br><span class="line"><span class="type">int</span> * <span class="type">const</span> p3 = &amp;num;<span class="comment">//p3可以修改所指空间的内容，但不能改变p3的指向</span></span><br><span class="line"><span class="type">const</span> <span class="type">int</span> * <span class="type">const</span> p1 = &amp;num;<span class="comment">//const的双重限定，两者都不能进行修改</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="概念对比"><a href="#概念对比" class="headerlink" title="概念对比"></a>概念对比</h3><h4 id="常量指针-vs-指针常量"><a href="#常量指针-vs-指针常量" class="headerlink" title="常量指针 vs 指针常量"></a>常量指针 vs 指针常量</h4><p>常量指针：首先是一个指针，指向的是常量，意味着不能修改指针所指的内容</p>
+<p>指针常量：首先是一个常量，指针本身不能改变指向</p>
+<h4 id="数组指针-vs-指针数组"><a href="#数组指针-vs-指针数组" class="headerlink" title="数组指针 vs 指针数组"></a>数组指针 vs 指针数组</h4><p>数组指针：首先是一个指针，指向的是一个数组</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span> arr[<span class="number">5</span>];</span><br><span class="line"><span class="built_in">int</span> (*p)[<span class="number">5</span>];</span><br></pre></td></tr></table></figure>
+
+<p>指针数组：首先是一个数组，数组中存放的是指针</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span> *arr2[<span class="number">5</span>];</span><br></pre></td></tr></table></figure>
+
+<h4 id="函数指针-vs-指针函数"><a href="#函数指针-vs-指针函数" class="headerlink" title="函数指针 vs 指针函数"></a>函数指针 vs 指针函数</h4><p>函数指针：首先是一个指针，指向的是一个函数</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="built_in">int</span> (*p)();</span><br></pre></td></tr></table></figure>
+
+<p>指针函数：首先是一个函数，函数的返回值是指针</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">int</span> *<span class="title">f</span><span class="params">()</span></span>;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+]]></content>
+      <categories>
+        <category>从零开始的C++生活</category>
+      </categories>
+      <tags>
+        <tag>C++</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>C++new/delete</title>
+    <url>/2026/01/08/C++new_delete/</url>
+    <content><![CDATA[<p>　　发</p>
+<h3 id="varlgrind工具的使用"><a href="#varlgrind工具的使用" class="headerlink" title="varlgrind工具的使用"></a>varlgrind工具的使用</h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">valgrind --tool=memcheck ./a.out</span><br></pre></td></tr></table></figure>
+
+<p>可以查看内存是否泄露。</p>
+<p>内存泄露：服务器程序是需要7*24小时稳定运行，如果不注意内存回收的操作，执行的过程中可用内存会一直减少，直到内存耗尽，程序就崩溃。</p>
+<h3 id="malloc-free与new-delete"><a href="#malloc-free与new-delete" class="headerlink" title="malloc&#x2F;free与new&#x2F;delete"></a>malloc&#x2F;free与new&#x2F;delete</h3><p>Q：malloc&#x2F;free与new&#x2F;delete有什么区别？</p>
+<p>A：malloc&#x2F;free是标准库函数，new&#x2F;delete是表达式。</p>
+<p>malloc申请的空间没有执行初始化操作，new表达式在执行时可以同时完成初始化操作。</p>
+<p>malloc参数传递的是申请的字节数，new表达式不需要指定字节数，会根据类型自动获取空间大小。</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span> * p1 = <span class="keyword">new</span> <span class="type">int</span>[<span class="number">5</span>]();<span class="comment">//开辟数组的空间，需要使用中括号[]</span></span><br><span class="line"><span class="type">int</span> * p1 = <span class="keyword">new</span> <span class="type">int</span>[<span class="number">5</span>];<span class="comment">//不加小括号，无法保证申请数组时清零，加上小括号会进行清零操作</span></span><br><span class="line"><span class="keyword">delete</span> [] p1;<span class="comment">//对于数组的回收，一定要加上中括号</span></span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>从零开始的C++生活</category>
+      </categories>
+      <tags>
+        <tag>C++</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>vim的使用</title>
+    <url>/2026/01/04/the_use_of_vim/</url>
+    <content><![CDATA[<p>　　本文章主要讲述了vim的基本使用方法，来源于vimtutor，仅供读者入门使用。</p>
+<h3 id="第一讲总结"><a href="#第一讲总结" class="headerlink" title="第一讲总结"></a>第一讲总结</h3><p><img src="/../images/the_use_of_vim/1.png" alt="1"></p>
+<h3 id="第二讲总结"><a href="#第二讲总结" class="headerlink" title="第二讲总结"></a>第二讲总结</h3><p><img src="/../images/the_use_of_vim/image-20260104164716929-1767519646133-5.png" alt="image-20260104164716929-1767519646133-5"></p>
+<h3 id="第三讲总结"><a href="#第三讲总结" class="headerlink" title="第三讲总结"></a>第三讲总结</h3><p><img src="/../images/the_use_of_vim/image-20260104164741092-1767519667650-8.png" alt="image-20260104164741092-1767519667650-8"></p>
+<h3 id="第四讲总结"><a href="#第四讲总结" class="headerlink" title="第四讲总结"></a>第四讲总结</h3><p><img src="/../images/the_use_of_vim/image-20260104164808576-1767519676759-11.png" alt="image-20260104164808576-1767519676759-11"></p>
+<h3 id="第五讲总结"><a href="#第五讲总结" class="headerlink" title="第五讲总结"></a>第五讲总结</h3><p><img src="/../images/the_use_of_vim/image-20260104164833643-1767519696256-14.png" alt="image-20260104164833643-1767519696256-14"></p>
+<h3 id="第六讲总结"><a href="#第六讲总结" class="headerlink" title="第六讲总结"></a>第六讲总结</h3><p><img src="/../images/the_use_of_vim/image-20260104164851791-1767519703908-17-1767520133008-22.png" alt="image-20260104164851791-1767519703908-17-1767520133008-22"></p>
+<h3 id="第七讲总结"><a href="#第七讲总结" class="headerlink" title="第七讲总结"></a>第七讲总结</h3><p><img src="/../images/the_use_of_vim/image-20260104170303025-1767519712609-20.png" alt="image-20260104170303025-1767519712609-20"></p>
+<h3 id="在vim中以多标签方式打开文件"><a href="#在vim中以多标签方式打开文件" class="headerlink" title="在vim中以多标签方式打开文件"></a>在vim中以多标签方式打开文件</h3><p>1.先打开hello.c文件</p>
+<p>2.用命令行模式</p>
+<p>3.在多标签中进行切换</p>
+<p>   ctrl+n 下一个标签</p>
+<p>   ctrl+p 下一个标签</p>
+<p>4.关闭某一个标签，使用命令行模式</p>
+<p>   :bd</p>
+]]></content>
+      <categories>
+        <category>从零开始的Linux生活</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
+        <tag>vim</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Linux文件的操作</title>
-    <url>/2025/12/30/Linux_day1/</url>
+    <url>/2025/12/30/Linux_file/</url>
     <content><![CDATA[<p>　　本文章主要讲解了入门Linux系统的基本文件操作方法，供读者入门参考。</p>
 <h3 id="文件的创建"><a href="#文件的创建" class="headerlink" title="文件的创建"></a>文件的创建</h3><p>1.cat&gt;file1</p>
 <p>直接用键盘写文件内容，结束输入用ctrl+d</p>
@@ -85,55 +224,16 @@
       </tags>
   </entry>
   <entry>
-    <title>C++命名空间的使用</title>
-    <url>/2026/01/06/c++day1/</url>
-    <content><![CDATA[<p>　　在C语言发展的过程中，会碰到多个公司之间进行合作开发。当两个不同公司代码合在一起时，会出现命名冲突的情况。在C++中，引入了命名空间。</p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">namespace</span> name&#123;</span><br><span class="line">    <span class="type">int</span> gnum;</span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">func</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="命名空间的使用方式"><a href="#命名空间的使用方式" class="headerlink" title="命名空间的使用方式"></a>命名空间的使用方式</h3><p>1.作用域限定符 ::</p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line">cout &lt;&lt; wd::gnum &lt;&lt; endl;</span><br><span class="line">wd::<span class="built_in">func</span>();</span><br></pre></td></tr></table></figure>
-
-<p>2.using编译指令</p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br></pre></td></tr></table></figure>
-
-<p>存在风险：当程序员不知道std空间中有哪些实体的情况下，会误用空间中的实体导致出现bug。不推荐使用这样的方式</p>
-<p>3.using声明机制(推荐使用)</p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">using</span> std::cout;</span><br><span class="line"><span class="keyword">using</span> std::endl;</span><br></pre></td></tr></table></figure>
-
-<p> 解决了方法二的缺点</p>
-<h3 id="命名空间的嵌套使用"><a href="#命名空间的嵌套使用" class="headerlink" title="命名空间的嵌套使用"></a>命名空间的嵌套使用</h3>]]></content>
+    <title>C++强制类型转换&amp;函数重载与默认参数</title>
+    <url>/2026/01/13/C++change/</url>
+    <content><![CDATA[<p>　　C++强制(类型)转换、函数重载与默认参数。</p>
+<p><img src="/../images/C++change/image-20260113210040415.png" alt="image-20260113210040415"></p>
+]]></content>
       <categories>
         <category>从零开始的C++生活</category>
       </categories>
       <tags>
         <tag>C++</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>vim的使用</title>
-    <url>/2026/01/04/the_use_of_vim/</url>
-    <content><![CDATA[<p>　　本文章主要讲述了vim的基本使用方法，来源于vimtutor，仅供读者入门使用。</p>
-<h3 id="第一讲总结"><a href="#第一讲总结" class="headerlink" title="第一讲总结"></a>第一讲总结</h3><p><img src="/../images/the_use_of_vim/1.png" alt="1"></p>
-<h3 id="第二讲总结"><a href="#第二讲总结" class="headerlink" title="第二讲总结"></a>第二讲总结</h3><p><img src="/../images/the_use_of_vim/image-20260104164716929-1767519646133-5.png" alt="image-20260104164716929-1767519646133-5"></p>
-<h3 id="第三讲总结"><a href="#第三讲总结" class="headerlink" title="第三讲总结"></a>第三讲总结</h3><p><img src="/../images/the_use_of_vim/image-20260104164741092-1767519667650-8.png" alt="image-20260104164741092-1767519667650-8"></p>
-<h3 id="第四讲总结"><a href="#第四讲总结" class="headerlink" title="第四讲总结"></a>第四讲总结</h3><p><img src="/../images/the_use_of_vim/image-20260104164808576-1767519676759-11.png" alt="image-20260104164808576-1767519676759-11"></p>
-<h3 id="第五讲总结"><a href="#第五讲总结" class="headerlink" title="第五讲总结"></a>第五讲总结</h3><p><img src="/../images/the_use_of_vim/image-20260104164833643-1767519696256-14.png" alt="image-20260104164833643-1767519696256-14"></p>
-<h3 id="第六讲总结"><a href="#第六讲总结" class="headerlink" title="第六讲总结"></a>第六讲总结</h3><p><img src="/../images/the_use_of_vim/image-20260104164851791-1767519703908-17-1767520133008-22.png" alt="image-20260104164851791-1767519703908-17-1767520133008-22"></p>
-<h3 id="第七讲总结"><a href="#第七讲总结" class="headerlink" title="第七讲总结"></a>第七讲总结</h3><p><img src="/../images/the_use_of_vim/image-20260104170303025-1767519712609-20.png" alt="image-20260104170303025-1767519712609-20"></p>
-<h3 id="在vim中以多标签方式打开文件"><a href="#在vim中以多标签方式打开文件" class="headerlink" title="在vim中以多标签方式打开文件"></a>在vim中以多标签方式打开文件</h3><p>1.先打开hello.c文件</p>
-<p>2.用命令行模式</p>
-<p>3.在多标签中进行切换</p>
-<p>   ctrl+n 下一个标签</p>
-<p>   ctrl+p 下一个标签</p>
-<p>4.关闭某一个标签，使用命令行模式</p>
-<p>   :bd</p>
-]]></content>
-      <categories>
-        <category>从零开始的Linux生活</category>
-      </categories>
-      <tags>
-        <tag>Linux</tag>
-        <tag>vim</tag>
       </tags>
   </entry>
 </search>
