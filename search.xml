@@ -57,7 +57,7 @@
     <url>/2026/01/07/C++const/</url>
     <content><![CDATA[<p>　　const关键字具有只读属性，无法进行修改。</p>
 <h3 id="宏定义与const常量的区别"><a href="#宏定义与const常量的区别" class="headerlink" title="宏定义与const常量的区别"></a>宏定义与const常量的区别</h3><p>Q：宏定义与const常量的区别？</p>
-<p>A：发生的时机不一样，宏定义发生在预处理时，只是进行简单的文本替换。const常量发生的时机时编译时。</p>
+<p>A：发生的时机不一样，宏定义发生在预处理时，只是进行简单的文本替换。const常量发生的时机是编译时。</p>
 <p>宏定义没有类型检查机制，出错时，会将发生错误的时机延迟到运行时，const常量是编译时，有类型检查机制，在编译时就可以发现问题。</p>
 <p>这提醒我们，如果使用宏定义不当，发生错误的概率会更大一些，因此建议多用const关键字。</p>
 <h3 id="const关键字修饰指针"><a href="#const关键字修饰指针" class="headerlink" title="const关键字修饰指针"></a>const关键字修饰指针</h3><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="type">const</span> <span class="type">int</span> * p2 = &amp;num；<span class="comment">//p2不能修改所指空间的内容，但依然可以改变p2的指向</span></span><br><span class="line"><span class="type">int</span> <span class="type">const</span> * p1 = &amp;num;<span class="comment">//p1不能修改所指空间的内容，但依然可以改变p1的指向</span></span><br><span class="line"><span class="type">int</span> * <span class="type">const</span> p3 = &amp;num;<span class="comment">//p3可以修改所指空间的内容，但不能改变p3的指向</span></span><br><span class="line"><span class="type">const</span> <span class="type">int</span> * <span class="type">const</span> p1 = &amp;num;<span class="comment">//const的双重限定，两者都不能进行修改</span></span><br></pre></td></tr></table></figure>
