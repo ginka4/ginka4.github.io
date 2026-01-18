@@ -93,8 +93,7 @@
   <entry>
     <title>C++new/delete</title>
     <url>/2026/01/08/C++new_delete/</url>
-    <content><![CDATA[<p>　　发</p>
-<h3 id="varlgrind工具的使用"><a href="#varlgrind工具的使用" class="headerlink" title="varlgrind工具的使用"></a>varlgrind工具的使用</h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">valgrind --tool=memcheck ./a.out</span><br></pre></td></tr></table></figure>
+    <content><![CDATA[<h3 id="varlgrind工具的使用"><a href="#varlgrind工具的使用" class="headerlink" title="varlgrind工具的使用"></a>varlgrind工具的使用</h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">valgrind --tool=memcheck ./a.out</span><br></pre></td></tr></table></figure>
 
 <p>可以查看内存是否泄露。</p>
 <p>内存泄露：服务器程序是需要7*24小时稳定运行，如果不注意内存回收的操作，执行的过程中可用内存会一直减少，直到内存耗尽，程序就崩溃。</p>
